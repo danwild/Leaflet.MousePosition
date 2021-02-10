@@ -5,7 +5,6 @@ Leaflet.MousePosition is a simple mouse position control that you can drop into 
 ![Screenshot](/screenshot/sample.png?raw=true)
 
 ## Using the Mouse Position Control
-
 Insert the following line:
 
     ...
@@ -20,7 +19,7 @@ These are the available options:
 
 `separator:` To separate longitude\latitude values. Defaults to ' : '
 
-`emptystring:` Initial text to display. Defaults to 'Unavailable'
+`emptyString:` Initial text to display. Defaults to 'Unavailable'
 
 `numDigits:` Number of digits. Defaults to 5
 
@@ -35,7 +34,22 @@ These are the available options:
 `wrapLng:` Controls if longitude values will be [wrapped](https://leafletjs.com/reference-1.5.0.html#latlng-wrap). Defaults to true.
 
 `formatter:` A custom function to format the entire value. Arguments: numerical longitude value, numerical latitude value. Return value: formatted string.
- Defaults to undefined. If defined will ignore: `lngFirst`, `lngFormatter`, `latFormatter` and `prefix`.
+Defaults to undefined. If defined will ignore: `lngFirst`, `lngFormatter`, `latFormatter` and `prefix`.
+
+### e.g
+
+const options = {
+position:'bottomleft',
+separator: ':',
+emptyString: 'default',
+numDigits:5,
+lngFirst:false,
+lngFormatter: (num) => "Lng " + L.Util.formatNum(num, 3) + 'º ',
+latFormatter: (num) => "Lat " + L.Util.formatNum(num, 3) + 'º ',
+prefix:'',
+wrapLng:true,
+}
+L.control.mousePosition(options).addTo(map);
 
 ## Public Methods:
 
@@ -51,3 +65,4 @@ MIT License (MIT)
 [npm-image]: https://badge.fury.io/js/leaflet-mouse-position.svg
 [npm-url]: https://www.npmjs.com/package/leaflet-mouse-position
 [npm-downloads-image]: https://img.shields.io/npm/dt/leaflet-mouse-position.svg
+
