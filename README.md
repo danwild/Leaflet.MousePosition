@@ -38,18 +38,18 @@ Defaults to undefined. If defined will ignore: `lngFirst`, `lngFormatter`, `latF
 
 ### e.g
 
-const options = {
-position:'bottomleft',
-separator: ':',
-emptyString: 'default',
-numDigits:5,
-lngFirst:false,
-lngFormatter: (num) => "Lng " + L.Util.formatNum(num, 3) + 'º ',
-latFormatter: (num) => "Lat " + L.Util.formatNum(num, 3) + 'º ',
-prefix:'',
-wrapLng:true,
-}
-L.control.mousePosition(options).addTo(map);
+const options = {  
+position:'bottomleft',  
+separator: ':',  
+emptyString: 'default',  
+numDigits:5,  
+lngFirst:false,  
+lngFormatter: (num) => "Lng " + L.Util.formatNum(num, 3) + 'º ',  
+latFormatter: (num) => "Lat " + L.Util.formatNum(num, 3) + 'º ',  
+prefix:'',  
+wrapLng:true,  
+}   
+L.control.mousePosition(options).addTo(map);  
 
 ## Public Methods:
 
